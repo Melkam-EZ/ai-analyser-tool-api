@@ -10,7 +10,6 @@ async function bootstrap() {
 	application.useGlobalFilters(new AllExceptionFilter(), new HttpExceptionFilter());
 	application.useGlobalPipes(new ValidationPipe({
 		whitelist: true, transform: true,
-		transformOptions: { enableImplicitConversion: true }
 	}));
 	await application.listen(process.env.PORT || 3330);
 }
